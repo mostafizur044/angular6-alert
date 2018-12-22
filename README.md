@@ -1,4 +1,4 @@
-# Demo2
+# Algular 6 Alert/Toster Service
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.3.
 
@@ -6,22 +6,23 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Use:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+First import `AlertModule` in your module, afterthat import `AlertService` at your component. Call `alert` to show alert. You have to pass an object as aurgument.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Ex: `this.service.alert({
+      classname: 'success' / 'info' / 'warning' / 'danger' / '',
+      message: 'any message',
+      autoRemove: true/false, [auto remove alert (optional)]
+      timer: number, [in ms default 3000ms]
+      options: {  [it is optional]
+        position: fixed, absolute, relative [default: fixed]
+        top: number [default top: 0px]
+        bottom: number
+        left: true/false [default center]
+        right: true/false
+      }
+    })`
+    
+selector Tag: `<alert-popup></alert-popup>
